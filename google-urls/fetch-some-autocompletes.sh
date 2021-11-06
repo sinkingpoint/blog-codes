@@ -1,0 +1,1 @@
+for x in {a..z}; do for y in {a..z}; do curl -s 'https://www.google.com/complete/search?client=firefox&q=https://'$x$y | jq -r '.[1] | del(.[0]) | .[]'; sleep 1; done; done | tee weird_urls
